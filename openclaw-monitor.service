@@ -1,0 +1,16 @@
+[Unit]
+Description=OpenClaw Pipeline Monitor
+After=network.target
+
+[Service]
+Type=simple
+User=n100
+WorkingDirectory=/home/n100/.openclaw/workspace/openclaw-monitor
+ExecStart=/usr/bin/python3 /home/n100/.openclaw/workspace/openclaw-monitor/server.py
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
