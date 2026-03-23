@@ -1019,8 +1019,9 @@ def get_channels_data():
                 for session_key, session_info in sessions_data.items():
                     session_id = session_info.get('sessionId', '')
                     # 使用 deliveryContext.channel 判断渠道（反映实际消息来源）
+                    # 自动获取所有 channel，不限制列表
                     dc_channel = session_info.get('deliveryContext', {}).get('channel', '')
-                    if dc_channel in ['telegram', 'feishu', 'qqbot', 'webchat']:
+                    if dc_channel:
                         sessions_meta[session_id] = dc_channel
         except:
             pass
