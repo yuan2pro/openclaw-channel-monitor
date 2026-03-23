@@ -4,6 +4,7 @@ OpenClaw Pipeline Monitor - Channel-based task view
 Monitor and visualize AI agent sessions across multiple communication channels.
 """
 
+import glob
 import json
 import os
 import re
